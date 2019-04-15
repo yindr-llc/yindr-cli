@@ -19,7 +19,6 @@ export default class DeckSwiperExample extends Component {
   render() {
     return (
       <Container>
-        <Header />
         <View>
           <DeckSwiper
             dataSource={cards}

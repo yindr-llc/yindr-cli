@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Image } from 'react-native';
 import { Container, Button, Header, View, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Body, Icon } from 'native-base';
 const cards = [
@@ -19,7 +19,7 @@ export default class SwiperWithButton extends Component {
       <Container>
         <View>
           <DeckSwiper
-            ref={(c) => this._deckSwiper = c}
+            ref={c => this._deckSwiper = c}
             dataSource={cards}
             renderEmpty={() =>
               <View style={{ alignSelf: "center" }}>
