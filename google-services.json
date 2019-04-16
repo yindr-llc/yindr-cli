@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "749240844127",
+    "firebase_url": "https://dishly-3e346.firebaseio.com",
+    "project_id": "dishly-3e346",
+    "storage_bucket": "dishly-3e346.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749240844127:android:f6e085171637873a",
+        "android_client_info": {
+          "package_name": "dishly.expo.googlesignin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749240844127-5iumkha4269upp6g8vo60kp6mk6dqrqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByouOdZc7uPt5nDpaDxxFOfMhVP5aj6kA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749240844127-5iumkha4269upp6g8vo60kp6mk6dqrqa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "749240844127-tqg6em6b68fdhns9cqbogf2a7fpni9s9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dishly.expo.googlesignin"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

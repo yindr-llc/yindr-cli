@@ -1,18 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 import Home from './src/components/Home'
 import RouterComponent from './src/components/Router'
 import firebase from 'firebase'
 import { Actions } from 'react-native-router-flux'
 
-var config = {
-  apiKey: "AIzaSyDh1WziWXMlYwAep_XpnZM8xIixDk2pt8Y",
-  authDomain: "dishly-ios.firebaseapp.com",
-  databaseURL: "https://dishly-ios.firebaseio.com",
-  projectId: "dishly-ios",
-  storageBucket: "dishly-ios.appspot.com",
-  messagingSenderId: "864829010556"
-};
+if (Platform.OS === 'ios'){
+  var config = {
+    apiKey: "AIzaSyDh1WziWXMlYwAep_XpnZM8xIixDk2pt8Y",
+    authDomain: "dishly-ios.firebaseapp.com",
+    databaseURL: "https://dishly-ios.firebaseio.com",
+    projectId: "dishly-ios",
+    storageBucket: "dishly-ios.appspot.com",
+    messagingSenderId: "864829010556"
+  };
+  console.log('ios')
+}else{
+  var config = {
+    apiKey: "AIzaSyAuxwGG38p5M8CdpQAsAD7Yk2nwOZLwIq4",
+    authDomain: "dishly-android.firebaseapp.com",
+    databaseURL: "https://dishly-android.firebaseio.com",
+    projectId: "dishly-android",
+    storageBucket: "dishly-android.appspot.com",
+    messagingSenderId: "742153709400"
+  };
+}
+
 firebase.initializeApp(config);
 
 

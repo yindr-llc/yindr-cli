@@ -3,6 +3,8 @@ import { Button, Text, Container, Header, Content, Form, Item, Input, Label } fr
 import { Scene, Router, Actions } from 'react-native-router-flux'
 import firebase from 'firebase'
 import { GoogleSignIn } from 'expo'
+import  GoogleButton  from './Commons/GoogleButton'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class AuthForm extends Component {
   isUserEqual = (googleUser, firebaseUser) => {
@@ -77,6 +79,7 @@ export default class AuthForm extends Component {
       const result = await Expo.Google.logInAsync({
         // androidClientId: YOUR_CLIENT_ID_HERE,
         behavior: 'web',
+        androidClientId:'485530816586-svtqcfsietr0f6ccjlo5m1a12s00diha.apps.googleusercontent.com',
         iosClientId:"485530816586-f5icb9vf5ektbnrfj9hkbbtt8526rd1i.apps.googleusercontent.com",
         scopes: ['profile', 'email']
       });
@@ -84,7 +87,11 @@ export default class AuthForm extends Component {
       if (result.type === 'success') {
         console.log('user in result',result.user)
         this.onSignIn(result);
-        const ClientId = "485530816586-f5icb9vf5ektbnrfj9hkbbtt8526rd1i.apps.googleusercontent.com"
+        if (Platform.OS === 'ios'){
+          const ClientId = "485530816586-f5icb9vf5ektbnrfj9hkbbtt8526rd1i.apps.googleusercontent.com"
+        }else{
+          const ClientId = "485530816586-svtqcfsietr0f6ccjlo5m1a12s00diha.apps.googleusercontent.com"
+        }
         const accessToken = result.accessToken
         await Google.logOutAsync({ ClientId, accessToken });
         console.log('after googlelog out', google)
@@ -111,15 +118,26 @@ export default class AuthForm extends Component {
               <Input />
             </Item>
           </Form>
-          <Button block style={{marginTop:10}}>
-            <Text>Light</Text>
-          </Button>
-          <Button
-            block
-            style={{marginTop:10}}
+          <GoogleButton
             onPress={() => this.signInWithGoogleAsync()}
             >
-            <Text>Sign In With Google</Text>
+            Login with Google
+          </GoogleButton>
+          <Icon.Button
+            name="google"
+            onPress={this.loginWithFacebook}
+          >
+            Login with Google
+          </Icon.Button>
+          <Icon.Button
+            name="facebook"
+            backgroundColor="#3b5998"
+            onPress={this.loginWithFacebook}
+          >
+            Login with Facebook
+          </Icon.Button>
+          <Button block style={{marginTop:10}}>
+            <Text>Sign In</Text>
           </Button>
         </Content>
       </Container>

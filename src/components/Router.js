@@ -5,6 +5,7 @@ import Home from './Home'
 import firebase from 'firebase'
 import Google from './Google'
 import Loading from './Commons/Loading'
+
 class RouterComponent extends Component {
   render(){
     return (

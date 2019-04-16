@@ -23,7 +23,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "dishly.expo.googlesignin",
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.749240844127-tqg6em6b68fdhns9cqbogf2a7fpni9s9"
+        }
+      }
+    },
+    "android": {
+      "package": "dishly.expo.googlesignin",
+      "googleServicesFile": "./google-services.json"
     },
     "description": ""
   }
